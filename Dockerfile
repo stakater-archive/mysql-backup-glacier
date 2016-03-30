@@ -20,13 +20,14 @@ ADD glacier-cmd.conf /etc/glacier-cmd.conf
 RUN cd amazon-glacier-cmd-interface && \
     python setup.py install
 
-ADD backup_glacier.py /home/backup_glacier.py
+ADD backup_glacier.py /pliro/backup_glacier.py
 ADD pliro_cron /etc/cron.d/pliro_cron
 
-RUN touch /var/log/cron.log
+RUN touch /var/log/cron.log && \
+    touch /var/log/pliro_cron.log
 
 RUN chmod 0644 /etc/cron.d/pliro_cron && \
-    chmod 0644 /home/backup_glacier.py
+    chmod 777 -R /pliro/
 
 
 CMD cron && /bin/bash
