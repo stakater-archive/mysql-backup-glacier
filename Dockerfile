@@ -25,8 +25,8 @@ ADD pliro_cron /etc/cron.d/pliro_cron
 
 RUN touch /var/log/cron.log
 
-RUN chmod +x /etc/cron.d/pliro_cron && \
-    chmod +x /home/backup_glacier.py
+RUN chmod 0644 /etc/cron.d/pliro_cron && \
+    chmod 0644 /home/backup_glacier.py
 
 
 CMD cron && /bin/bash
