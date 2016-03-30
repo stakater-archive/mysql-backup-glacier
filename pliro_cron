@@ -1,1 +1,2 @@
-0 0 * * * python /home/backup_glacier.py
+0 0 * * * root python /home/backup_glacier.py
+0 0 * * * root echo backup started at "'$(date)'" >> /var/log/cron.log 2>&1
