@@ -1,2 +1,5 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
 0 0 * * * root sh /start_backup.sh >> /var/log/pliro_cron.log 2>&1
 

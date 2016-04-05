@@ -24,7 +24,7 @@ sudo docker build -f Dockerfile --rm -t backup_mysql .
 
 * run the docker container
 ~~~
-sudo docker run --name backup_mysql -it backup_mysql
+sudo docker run -d --name backup_mysql -it backup_mysql
 ~~~
 
 ### Optional Steps ###
