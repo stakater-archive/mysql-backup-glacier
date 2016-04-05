@@ -1,3 +1,2 @@
-0 0 * * * root python /pliro/backup_glacier.py >> /var/log/pliro_cron.log 2>&1
-0 0 * * * root "echo backup started at '$(date)'" >> /var/log/cron.log 2>&1
+0 0 * * * root sh /start_backup.sh >> /var/log/pliro_cron.log 2>&1
 

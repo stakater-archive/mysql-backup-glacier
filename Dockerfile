@@ -22,11 +22,12 @@ RUN cd amazon-glacier-cmd-interface && \
 
 ADD backup_glacier.py /pliro/backup_glacier.py
 ADD pliro_cron /etc/cron.d/pliro_cron
+ADD start_backup.sh /start_backup.sh
 
-RUN touch /var/log/cron.log && \
-    touch /var/log/pliro_cron.log
+RUN touch /var/log/pliro_cron.log
 
 RUN chmod 0644 /etc/cron.d/pliro_cron && \
+    chmod 777 /start_backup.sh && \
     chmod 777 -R /pliro/
 
 
